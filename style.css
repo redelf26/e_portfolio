@@ -1117,81 +1117,65 @@ body {
 }
 
 /* ============================================
-   Seminars Section
+   Certificate Hover Effects
    ============================================ */
-.seminars-list {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
-.seminar-item {
-  display: flex;
-  gap: 25px;
-  background: var(--bg-card);
-  padding: 25px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: var(--transition-normal);
-}
-
-.seminar-item:hover {
-  transform: translateX(10px);
-  box-shadow: var(--shadow-md);
-}
-
-.seminar-date {
-  min-width: 70px;
-  text-align: center;
-  padding: 15px;
-  background: var(--gradient-primary);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.seminar-date .month {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.seminar-date .year {
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-.seminar-content h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.seminar-content .organizer {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+/* Issuer and Date Styling */
+.cert-issuer {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
-.seminar-content .description {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-}
-
-.seminar-type {
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(239, 71, 111, 0.2);
-  color: var(--accent-red);
-  border-radius: 20px;
-  font-size: 0.75rem;
+.cert-date {
+  color: var(--accent-yellow);
   font-weight: 600;
+  font-size: 0.8rem;
+  background: rgba(255, 209, 102, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.cert-divider {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* Slide Down Details Animation */
+.cert-extra-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth easing */
+  border-left: 2px solid var(--primary-blue);
+  margin-left: 2px;
+  padding-left: 10px;
+}
+
+.cert-card:hover .cert-extra-details {
+  max-height: 100px; /* Adjust if text is very long */
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.cert-extra-details p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.cert-extra-details small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 5px;
+  border-radius: 3px;
 }
 
 /* ============================================
@@ -1611,16 +1595,6 @@ body {
 
   .timeline-item {
     padding-left: 35px;
-  }
-
-  .seminar-item {
-    flex-direction: column;
-  }
-
-  .seminar-date {
-    flex-direction: row;
-    gap: 10px;
-    width: fit-content;
   }
 
   .footer-content {

@@ -25,7 +25,6 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#seminars">Seminars</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#organizations">Organizations</a></li>
         </ul>
@@ -290,11 +289,101 @@
       <div class="container">
         <h2 class="section-title">Certificates</h2>
         <p class="section-subtitle">
-          Click on any certificate to view the full document
+          Hover to see details • Click to view document
         </p>
 
         <div class="certificates-showcase">
-          <!-- Certificate Card 1 - DevFest 2025 (Dec 2025) -->
+          <!-- Certificate Card 1 - Canva Essentials -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Canva Essentials',
+                '/assets/certificates/canva_essentials.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/canva_essentials.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper"><i class="fas fa-award"></i></div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Canva Essentials</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Canva Design School
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Jan 14, 2026</span>
+              </p>
+              <div class="cert-extra-details">
+                <p>
+                  Completed the essentials course, equivalent to 1 hour of
+                  training.
+                </p>
+                <small>ID: 62440d</small>
+              </div>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 2 - Create Scroll Stopping Content -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Create Scroll Stopping Content',
+                '/assets/certificates/scroll_stopping_content.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/scroll_stopping_content.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-pen-fancy"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Create Scroll Stopping Content</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Canva Design School
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Jan 14, 2026</span>
+              </p>
+              <div class="cert-extra-details">
+                <p>
+                  Course on creating engaging social media content. Equivalent
+                  to 1 hour.
+                </p>
+                <small>ID: a805f1</small>
+              </div>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 3 - DevFest -->
           <div
             class="cert-card"
             onclick="
@@ -312,18 +401,22 @@
                   alt="DevFest 2025 Preview"
                 />
               </div>
-              <div class="cert-icon-wrapper">
-                <i class="fab fa-google"></i>
-              </div>
+              <div class="cert-icon-wrapper"><i class="fab fa-google"></i></div>
               <div class="cert-shine"></div>
             </div>
             <div class="cert-details">
-              <h3>DevFest 2025</h3>
+              <h3>DevFest Bacolod 2025</h3>
               <p class="cert-issuer">
                 <i class="fas fa-building"></i> Google Developer Groups
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Dec 2025</span>
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Nov 22, 2025</span>
               </p>
+              <div class="cert-extra-details">
+                <p>
+                  Certificate of Attendance for the annual developer festival
+                  held at USLS.
+                </p>
+              </div>
               <div class="cert-footer">
                 <span class="cert-type"
                   ><i class="fas fa-image"></i> Image</span
@@ -333,7 +426,8 @@
             </div>
           </div>
 
-          <!-- Certificate Card 2 - ISACA (Nov 2025) -->
+          <!-- Certificate Card 4 - ISACA -->
+
           <div
             class="cert-card"
             onclick="
@@ -354,12 +448,15 @@
               <div class="cert-shine"></div>
             </div>
             <div class="cert-details">
-              <h3>ISACA Certificate</h3>
+              <h3>The Digital Foundation</h3>
               <p class="cert-issuer">
-                <i class="fas fa-building"></i> ISACA
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Nov 2025</span>
+                <i class="fas fa-building"></i> USLS ISACA Student Group
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Nov 8, 2025</span>
               </p>
+              <div class="cert-extra-details">
+                <p>Participation in the conference on Governance and Trust.</p>
+              </div>
               <div class="cert-footer">
                 <span class="cert-type"
                   ><i class="fas fa-image"></i> Image</span
@@ -369,7 +466,8 @@
             </div>
           </div>
 
-          <!-- Certificate Card 3 - Cybersecurity Awareness (Oct 2025) -->
+          <!-- Certificate Card 5 - Cybersecurity Awareness -->
+
           <div
             class="cert-card"
             onclick="
@@ -395,10 +493,13 @@
             <div class="cert-details">
               <h3>Cybersecurity Awareness</h3>
               <p class="cert-issuer">
-                <i class="fas fa-building"></i> Training Provider
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Oct 2025</span>
+                <i class="fas fa-building"></i> DICT
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Oct 10, 2025</span>
               </p>
+              <div class="cert-extra-details">
+                <p>3-hour information session conducted by DICT Region VI.</p>
+              </div>
               <div class="cert-footer">
                 <span class="cert-type"
                   ><i class="fas fa-file-pdf"></i> PDF</span
@@ -408,7 +509,52 @@
             </div>
           </div>
 
-          <!-- Certificate Card 4 - Data Privacy (Sep 2025) -->
+          <!-- Certificate Card 6 - Digital Citizenship -->
+
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Digital Citizenship',
+                '/assets/certificates/digital_citizenship.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/digital_citizenship.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper"><i class="fas fa-globe"></i></div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Digital Citizenship</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> DICT
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Oct 10, 2025</span>
+              </p>
+              <div class="cert-extra-details">
+                <p>
+                  3-hour session on responsible digital behavior by DICT Region
+                  VI.
+                </p>
+              </div>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 7 - Data Privacy -->
+
           <div
             class="cert-card"
             onclick="
@@ -434,127 +580,13 @@
             <div class="cert-details">
               <h3>Data Privacy</h3>
               <p class="cert-issuer">
-                <i class="fas fa-building"></i> Training Provider
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Sep 2025</span>
+                <i class="fas fa-building"></i> DICT
+                <span class="cert-divider">•</span>
+                <span class="cert-date">Sep 10, 2025</span>
               </p>
-              <div class="cert-footer">
-                <span class="cert-type"
-                  ><i class="fas fa-file-pdf"></i> PDF</span
-                >
-                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              <div class="cert-extra-details">
+                <p>4-hour webinar hosted by Davao del Sur Provincial Office.</p>
               </div>
-            </div>
-          </div>
-
-          <!-- Certificate Card 5 - Digital Citizenship (Aug 2025) -->
-          <div
-            class="cert-card"
-            onclick="
-              openCertModal(
-                'Digital Citizenship',
-                '/assets/certificates/digital_citizenship.pdf',
-                'pdf',
-              )
-            "
-          >
-            <div class="cert-preview">
-              <div class="cert-thumbnail">
-                <iframe
-                  src="/assets/certificates/digital_citizenship.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  title="Preview"
-                ></iframe>
-              </div>
-              <div class="cert-icon-wrapper">
-                <i class="fas fa-globe"></i>
-              </div>
-              <div class="cert-shine"></div>
-            </div>
-            <div class="cert-details">
-              <h3>Digital Citizenship</h3>
-              <p class="cert-issuer">
-                <i class="fas fa-building"></i> Training Provider
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Aug 2025</span>
-              </p>
-              <div class="cert-footer">
-                <span class="cert-type"
-                  ><i class="fas fa-file-pdf"></i> PDF</span
-                >
-                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Certificate Card 6 - Canva Essentials (Jul 2025) -->
-          <div
-            class="cert-card"
-            onclick="
-              openCertModal(
-                'Canva Essentials',
-                '/assets/certificates/canva_essentials.pdf',
-                'pdf',
-              )
-            "
-          >
-            <div class="cert-preview">
-              <div class="cert-thumbnail">
-                <iframe
-                  src="/assets/certificates/canva_essentials.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  title="Preview"
-                ></iframe>
-              </div>
-              <div class="cert-icon-wrapper">
-                <i class="fas fa-award"></i>
-              </div>
-              <div class="cert-shine"></div>
-            </div>
-            <div class="cert-details">
-              <h3>Canva Essentials</h3>
-              <p class="cert-issuer">
-                <i class="fas fa-building"></i> Canva
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Jul 2025</span>
-              </p>
-              <div class="cert-footer">
-                <span class="cert-type"
-                  ><i class="fas fa-file-pdf"></i> PDF</span
-                >
-                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Certificate Card 7 - Scroll-Stopping Content (Jun 2025) -->
-          <div
-            class="cert-card"
-            onclick="
-              openCertModal(
-                'Scroll-Stopping Content',
-                '/assets/certificates/scroll_stopping_content.pdf',
-                'pdf',
-              )
-            "
-          >
-            <div class="cert-preview">
-              <div class="cert-thumbnail">
-                <iframe
-                  src="/assets/certificates/scroll_stopping_content.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  title="Preview"
-                ></iframe>
-              </div>
-              <div class="cert-icon-wrapper">
-                <i class="fas fa-pen-fancy"></i>
-              </div>
-              <div class="cert-shine"></div>
-            </div>
-            <div class="cert-details">
-              <h3>Scroll-Stopping Content</h3>
-              <p class="cert-issuer">
-                <i class="fas fa-building"></i> Content Creator Course
-                <span class="cert-divider">|</span>
-                <span class="cert-date">Jun 2025</span>
-              </p>
               <div class="cert-footer">
                 <span class="cert-type"
                   ><i class="fas fa-file-pdf"></i> PDF</span
@@ -586,81 +618,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Seminars Section -->
-    <section id="seminars" class="section seminars">
-      <div class="container">
-        <h2 class="section-title">Seminars & Workshops</h2>
-        <div class="seminars-list">
-          <div class="seminar-item">
-            <div class="seminar-date">
-              <span class="month">Jan</span>
-              <span class="year">2026</span>
-            </div>
-            <div class="seminar-content">
-              <h3>Tech Innovation Summit 2026</h3>
-              <p class="organizer">
-                <i class="fas fa-building"></i> Tech Community PH
-              </p>
-              <p class="description">
-                Explored emerging technologies including AI, blockchain, and
-                cloud computing.
-              </p>
-              <span class="seminar-type">Conference</span>
-            </div>
-          </div>
-          <div class="seminar-item">
-            <div class="seminar-date">
-              <span class="month">Nov</span>
-              <span class="year">2025</span>
-            </div>
-            <div class="seminar-content">
-              <h3>Web Development Bootcamp</h3>
-              <p class="organizer">
-                <i class="fas fa-building"></i> Developer Student Clubs
-              </p>
-              <p class="description">
-                Intensive workshop on modern web development frameworks and best
-                practices.
-              </p>
-              <span class="seminar-type">Workshop</span>
-            </div>
-          </div>
-          <div class="seminar-item">
-            <div class="seminar-date">
-              <span class="month">Sep</span>
-              <span class="year">2025</span>
-            </div>
-            <div class="seminar-content">
-              <h3>Career Development in IT</h3>
-              <p class="organizer">
-                <i class="fas fa-building"></i> University Career Center
-              </p>
-              <p class="description">
-                Insights on building a successful career in the IT industry.
-              </p>
-              <span class="seminar-type">Seminar</span>
-            </div>
-          </div>
-          <div class="seminar-item">
-            <div class="seminar-date">
-              <span class="month">Jul</span>
-              <span class="year">2025</span>
-            </div>
-            <div class="seminar-content">
-              <h3>Hackathon: Code for Good</h3>
-              <p class="organizer">
-                <i class="fas fa-building"></i> Local Tech Hub
-              </p>
-              <p class="description">
-                24-hour hackathon focused on creating solutions for social good.
-              </p>
-              <span class="seminar-type">Hackathon</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section projects">
@@ -744,7 +701,7 @@
               </div>
             </div>
           </div>
-          <div class="project-card">
+          <!-- <div class="project-card">
             <div class="project-image">
               <div class="project-placeholder">
                 <i class="fas fa-gamepad"></i>
@@ -767,7 +724,7 @@
                 <span>CSS</span>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -775,16 +732,16 @@
     <!-- Organizations Section -->
     <section id="organizations" class="section organizations">
       <div class="container">
-        <h2 class="section-title">Organizations</h2>
+        <h2 class="section-title">Organizational Involvement</h2>
         <div class="organizations-grid">
           <div class="org-card">
             <div class="org-logo">
               <i class="fas fa-users"></i>
             </div>
             <div class="org-content">
-              <h3>Google Developer Student Club</h3>
-              <span class="org-role">Core Team Member</span>
-              <span class="org-period">2024 - Present</span>
+              <h3>Computer Students Society (CSS)</h3>
+              <span class="org-role">Business Manager</span>
+              <span class="org-period">2025 - Present</span>
               <p>
                 Actively organizing tech events, workshops, and study jams for
                 fellow students. Contributing to community growth and knowledge
