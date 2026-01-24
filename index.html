@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">Portfolio</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#seminars">Seminars</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#organizations">Organizations</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="greeting animate-fade-up">Hello, I'm</span>
+          <h1 class="name animate-fade-up delay-1">Elfred Bayona</h1>
+          <p class="tagline animate-fade-up delay-2">
+            BS in Information Technology Student || Vibe Coder
+          </p>
+          <p class="hero-description animate-fade-up delay-3">
+            Willing to learn and explore new technologies to enhance my skills
+            and contribute to innovative projects.
+          </p>
+          <div class="hero-buttons animate-fade-up delay-4">
+            <a href="#skills" class="btn btn-primary">View Skills</a>
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
+          <div class="social-links animate-fade-up delay-5">
+            <a
+              href="https://github.com/redelf26"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/elfred-bayona-359316383/"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/elfredmbayona"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="mailto:elfredmbayona@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual animate-float">
+          <div class="hero-shape"></div>
+          <div class="hero-dots"></div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="image-wrapper">
+              <div class="image-placeholder">
+                <img src="/assets/images/profile.jpg" alt="Profile Picture" />
+              </div>
+              <div class="image-decoration"></div>
+            </div>
+          </div>
+          <div class="about-text">
+            <h3>Who am I?</h3>
+            <p>
+              I'm a passionate student and aspiring developer with a keen
+              interest in creating innovative solutions. My journey in
+              technology started with curiosity and has evolved into a
+              dedication to continuous learning and growth.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring new technologies,
+              participating in hackathons, or contributing to community
+              projects. I believe in the power of technology to transform lives
+              and create positive impact.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Certificates</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Seminars</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">HTML</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="65"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">CSS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="60"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="35"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-palette"></i> Design & Creativity</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">Canva</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Photoshop</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="20"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop"></i> Productivity Tools</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">Microsoft Word</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Microsoft Excel</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="70"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Microsoft PowerPoint</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Google Docs</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="75"></div>
+                </div>
+                <span class="skill-name">Google Sheets</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="70"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Technical & Soft Skills</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name"
+                  >PC, Laptop, and Printer Troubleshooting</span
+                >
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="50"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">PC, Laptop, and Printer Cleaning</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="50"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Communication Skills</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+      <div class="container">
+        <h2 class="section-title">Education Background</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 - Present</span>
+              <h3>Bachelor of Science in Information Technology</h3>
+              <h4>Fellowship Baptist College</h4>
+              <p>
+                Focused on web development and database management. Currently
+                preparing for 500 hours of On-the-Job Training (OJT) starting
+                January 2026.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2018 - 2019</span>
+              <h3>Bachelor of Science in Hospitality Management</h3>
+              <span class="status-label">Undergraduate (1st Year)</span>
+              <h4>Fellowship Baptist College</h4>
+              <p>
+                Completed the first year of the program, focusing on hospitality
+                fundamentals and professional service standards.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2016 - 2018</span>
+              <h3>Senior High School - Technical Vocational (ICT)</h3>
+              <h4>Fellowship Baptist College</h4>
+              <p>
+                Graduated with honors. Developed basic skills in programming and
+                business communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates">
+      <div class="container">
+        <h2 class="section-title">Certificates</h2>
+        <p class="section-subtitle">
+          Click on any certificate to view the full document
+        </p>
+
+        <div class="certificates-showcase">
+          <!-- Certificate Card 1 - DevFest 2025 (Dec 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'DevFest 2025',
+                '/assets/certificates/devFest_2025.png',
+                'image',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <img
+                  src="/assets/certificates/devFest_2025.png"
+                  alt="DevFest 2025 Preview"
+                />
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fab fa-google"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>DevFest 2025</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Google Developer Groups
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Dec 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-image"></i> Image</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 2 - ISACA (Nov 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'ISACA Certificate',
+                '/assets/certificates/isaca.png',
+                'image',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <img src="/assets/certificates/isaca.png" alt="ISACA Preview" />
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>ISACA Certificate</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> ISACA
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Nov 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-image"></i> Image</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 3 - Cybersecurity Awareness (Oct 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Cybersecurity Awareness',
+                '/assets/certificates/cybersecurity_awareness.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/cybersecurity_awareness.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Cybersecurity Awareness</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Training Provider
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Oct 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 4 - Data Privacy (Sep 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Data Privacy',
+                '/assets/certificates/data_privacy.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/data_privacy.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Data Privacy</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Training Provider
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Sep 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 5 - Digital Citizenship (Aug 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Digital Citizenship',
+                '/assets/certificates/digital_citizenship.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/digital_citizenship.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Digital Citizenship</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Training Provider
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Aug 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 6 - Canva Essentials (Jul 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Canva Essentials',
+                '/assets/certificates/canva_essentials.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/canva_essentials.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Canva Essentials</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Canva
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Jul 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate Card 7 - Scroll-Stopping Content (Jun 2025) -->
+          <div
+            class="cert-card"
+            onclick="
+              openCertModal(
+                'Scroll-Stopping Content',
+                '/assets/certificates/scroll_stopping_content.pdf',
+                'pdf',
+              )
+            "
+          >
+            <div class="cert-preview">
+              <div class="cert-thumbnail">
+                <iframe
+                  src="/assets/certificates/scroll_stopping_content.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="Preview"
+                ></iframe>
+              </div>
+              <div class="cert-icon-wrapper">
+                <i class="fas fa-pen-fancy"></i>
+              </div>
+              <div class="cert-shine"></div>
+            </div>
+            <div class="cert-details">
+              <h3>Scroll-Stopping Content</h3>
+              <p class="cert-issuer">
+                <i class="fas fa-building"></i> Content Creator Course
+                <span class="cert-divider">|</span>
+                <span class="cert-date">Jun 2025</span>
+              </p>
+              <div class="cert-footer">
+                <span class="cert-type"
+                  ><i class="fas fa-file-pdf"></i> PDF</span
+                >
+                <span class="cert-view"><i class="fas fa-eye"></i> View</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal">
+      <div class="cert-modal-content">
+        <div class="cert-modal-header">
+          <h3 id="certModalTitle">Certificate Title</h3>
+          <button class="cert-modal-close" onclick="closeCertModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="cert-modal-body" id="certModalBody">
+          <!-- PDF or Image will be embedded here -->
+        </div>
+        <div class="cert-modal-footer">
+          <a id="certDownloadBtn" href="#" download class="btn btn-primary">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seminars Section -->
+    <section id="seminars" class="section seminars">
+      <div class="container">
+        <h2 class="section-title">Seminars & Workshops</h2>
+        <div class="seminars-list">
+          <div class="seminar-item">
+            <div class="seminar-date">
+              <span class="month">Jan</span>
+              <span class="year">2026</span>
+            </div>
+            <div class="seminar-content">
+              <h3>Tech Innovation Summit 2026</h3>
+              <p class="organizer">
+                <i class="fas fa-building"></i> Tech Community PH
+              </p>
+              <p class="description">
+                Explored emerging technologies including AI, blockchain, and
+                cloud computing.
+              </p>
+              <span class="seminar-type">Conference</span>
+            </div>
+          </div>
+          <div class="seminar-item">
+            <div class="seminar-date">
+              <span class="month">Nov</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="seminar-content">
+              <h3>Web Development Bootcamp</h3>
+              <p class="organizer">
+                <i class="fas fa-building"></i> Developer Student Clubs
+              </p>
+              <p class="description">
+                Intensive workshop on modern web development frameworks and best
+                practices.
+              </p>
+              <span class="seminar-type">Workshop</span>
+            </div>
+          </div>
+          <div class="seminar-item">
+            <div class="seminar-date">
+              <span class="month">Sep</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="seminar-content">
+              <h3>Career Development in IT</h3>
+              <p class="organizer">
+                <i class="fas fa-building"></i> University Career Center
+              </p>
+              <p class="description">
+                Insights on building a successful career in the IT industry.
+              </p>
+              <span class="seminar-type">Seminar</span>
+            </div>
+          </div>
+          <div class="seminar-item">
+            <div class="seminar-date">
+              <span class="month">Jul</span>
+              <span class="year">2025</span>
+            </div>
+            <div class="seminar-content">
+              <h3>Hackathon: Code for Good</h3>
+              <p class="organizer">
+                <i class="fas fa-building"></i> Local Tech Hub
+              </p>
+              <p class="description">
+                24-hour hackathon focused on creating solutions for social good.
+              </p>
+              <span class="seminar-type">Hackathon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title">Side Projects</h2>
+        <div class="projects-gallery">
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Personal Website</h3>
+              <p>
+                A responsive portfolio website built with HTML, CSS, and
+                JavaScript.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Task Manager App</h3>
+              <p>
+                A simple task management application with CRUD functionality.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>SQLite</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Budget Calculator</h3>
+              <p>A web app to help track and manage personal finances.</p>
+              <div class="project-tags">
+                <span>React</span>
+                <span>CSS</span>
+                <span>LocalStorage</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" class="project-link"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Mini Game Collection</h3>
+              <p>Collection of classic games like Tic-Tac-Toe and Snake.</p>
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>Canvas</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organizations Section -->
+    <section id="organizations" class="section organizations">
+      <div class="container">
+        <h2 class="section-title">Organizations</h2>
+        <div class="organizations-grid">
+          <div class="org-card">
+            <div class="org-logo">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="org-content">
+              <h3>Google Developer Student Club</h3>
+              <span class="org-role">Core Team Member</span>
+              <span class="org-period">2024 - Present</span>
+              <p>
+                Actively organizing tech events, workshops, and study jams for
+                fellow students. Contributing to community growth and knowledge
+                sharing.
+              </p>
+            </div>
+          </div>
+          <div class="org-card">
+            <div class="org-logo">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="org-content">
+              <h3>IT Student Society</h3>
+              <span class="org-role">Public Relations Officer</span>
+              <span class="org-period">2023 - Present</span>
+              <p>
+                Managing communications and social media presence. Coordinating
+                with other organizations for collaborative events.
+              </p>
+            </div>
+          </div>
+          <div class="org-card">
+            <div class="org-logo">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="org-content">
+              <h3>Youth Volunteer Organization</h3>
+              <span class="org-role">Active Member</span>
+              <span class="org-period">2022 - Present</span>
+              <p>
+                Participating in community outreach programs and digital
+                literacy initiatives for underprivileged communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-text">
+            <h3>Let's Connect!</h3>
+            <p>
+              Feel free to reach out for collaborations or just a friendly hello
+              👋
+            </p>
+          </div>
+          <div class="footer-social">
+            <a
+              href="https://github.com/redelf26"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/elfred-bayona-359316383/"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/elfredmbayona"
+              class="social-link"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="mailto:elfredmbayona@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Elfred Bayona. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
