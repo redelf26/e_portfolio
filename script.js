@@ -186,10 +186,10 @@ const animateStats = () => {
       const updateCount = () => {
         if (count < target) {
           count += increment;
-          stat.textContent = Math.ceil(count) + "+";
+          stat.textContent = Math.ceil(count);
           requestAnimationFrame(updateCount);
         } else {
-          stat.textContent = target + "+";
+          stat.textContent = target;
         }
       };
 
