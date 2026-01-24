@@ -66,7 +66,7 @@ window.addEventListener("scroll", () => {
 // Scroll Reveal Animation
 // ============================================
 const revealElements = document.querySelectorAll(
-  ".section-title, .skill-category, .timeline-item, .certificate-card, .cert-card, .seminar-item, .project-card, .org-card, .about-content",
+  ".section-title, .skill-category, .timeline-item, .certificate-card, .cert-card, .project-card, .org-card, .about-content",
 );
 
 const revealOnScroll = () => {
@@ -309,7 +309,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".skill-category, .timeline-item, .certificate-card, .seminar-item, .project-card, .org-card",
+    ".skill-category, .timeline-item, .certificate-card, .project-card, .org-card",
   )
   .forEach((el) => {
     observer.observe(el);
@@ -327,6 +327,84 @@ window.addEventListener("load", () => {
     animateSkillBars();
     animateStats();
   }, 300);
+});
+
+// ============================================
+// Theme Toggle
+// ============================================
+const themeToggle = document.getElementById("themeToggle");
+const themeOverlay = document.getElementById("themeOverlay");
+const body = document.body;
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  body.classList.add("light-mode");
+}
+
+themeToggle.addEventListener("click", (e) => {
+  // Get click position for radial animation
+  const rect = themeToggle.getBoundingClientRect();
+  const x = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
+  const y = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+
+  themeOverlay.style.setProperty("--click-x", `${x}%`);
+  themeOverlay.style.setProperty("--click-y", `${y}%`);
+
+  // Determine transition direction
+  const isCurrentlyDark = !body.classList.contains("light-mode");
+
+  // Remove previous classes
+  themeOverlay.classList.remove("active", "to-light", "to-dark");
+
+  // Add appropriate classes
+  themeOverlay.classList.add(isCurrentlyDark ? "to-light" : "to-dark");
+
+  // Trigger reflow
+  void themeOverlay.offsetWidth;
+
+  // Start animation
+  themeOverlay.classList.add("active");
+
+  // Toggle theme after a short delay for smooth transition
+  setTimeout(() => {
+    body.classList.toggle("light-mode");
+
+    // Save preference
+    const newTheme = body.classList.contains("light-mode") ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+  }, 150);
+});
+
+// ============================================
+// Go to Top Button
+// ============================================
+const goToTopBtn = document.getElementById("goToTop");
+
+// Show/hide button based on scroll position
+window.addEventListener("scroll", () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const scrollProgress = (scrollTop / scrollHeight) * 100;
+
+  // Show button after scrolling 300px
+  if (scrollTop > 300) {
+    goToTopBtn.classList.add("visible");
+  } else {
+    goToTopBtn.classList.remove("visible");
+  }
+
+  // Update progress indicator
+  goToTopBtn.style.setProperty("--scroll-progress", `${scrollProgress}%`);
+});
+
+// Smooth scroll to top
+goToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
 // ============================================
