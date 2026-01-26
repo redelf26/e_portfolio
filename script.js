@@ -246,46 +246,73 @@ const initHeroCube = () => {
   let rotateY = 30;
   let isBroken = false;
 
-  // Mouse Down: Start Dragging
-  container.addEventListener("mousedown", (e) => {
+  // Helper to get coordinates from mouse or touch event
+  const getEventCoords = (e) => {
+    if (e.touches && e.touches.length > 0) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+    return { x: e.clientX, y: e.clientY };
+  };
+
+  // Start Dragging (Mouse & Touch)
+  const handleStart = (e) => {
     if (isBroken) return;
     isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    const coords = getEventCoords(e);
+    startX = coords.x;
+    startY = coords.y;
     container.style.cursor = "grabbing";
     container.style.animation = "none"; // Stop floating so we can control it
-    e.preventDefault(); // Prevent text selection
-  });
+    e.preventDefault(); // Prevent text selection / scrolling
+  };
 
-  // Mouse Up: Stop Dragging or Trigger Click
-  window.addEventListener("mouseup", (e) => {
+  // Stop Dragging (Mouse & Touch)
+  const handleEnd = (e) => {
     if (!isDragging) return;
     isDragging = false;
     container.style.cursor = "grab";
     container.style.animation = "floatCube 6s ease-in-out infinite"; // Resume floating
 
-    // Calculate if this was a click (moved less than 5px)
-    const dist = Math.hypot(e.clientX - startX, e.clientY - startY);
+    // Get end coordinates
+    const coords = e.changedTouches
+      ? { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY }
+      : { x: e.clientX, y: e.clientY };
+
+    // Calculate if this was a click/tap (moved less than 5px)
+    const dist = Math.hypot(coords.x - startX, coords.y - startY);
     if (dist < 5) {
       explodeCube();
     }
-  });
+  };
 
-  // Mouse Move: Rotate Cube
-  window.addEventListener("mousemove", (e) => {
+  // Move/Rotate Cube (Mouse & Touch)
+  const handleMove = (e) => {
     if (!isDragging || isBroken) return;
 
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
+    const coords = getEventCoords(e);
+    const deltaX = coords.x - startX;
+    const deltaY = coords.y - startY;
 
     rotateY += deltaX * 0.5;
     rotateX -= deltaY * 0.5;
 
     container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-    startX = e.clientX;
-    startY = e.clientY;
-  });
+    startX = coords.x;
+    startY = coords.y;
+
+    e.preventDefault(); // Prevent scrolling while dragging
+  };
+
+  // Mouse Events
+  container.addEventListener("mousedown", handleStart);
+  window.addEventListener("mouseup", handleEnd);
+  window.addEventListener("mousemove", handleMove);
+
+  // Touch Events
+  container.addEventListener("touchstart", handleStart, { passive: false });
+  window.addEventListener("touchend", handleEnd);
+  window.addEventListener("touchmove", handleMove, { passive: false });
 
   // Explosion Function
   function explodeCube() {
