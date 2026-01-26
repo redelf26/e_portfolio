@@ -216,20 +216,132 @@ window.addEventListener("scroll", () => {
 // ============================================
 // Mouse Move Effect on Hero
 // ============================================
-const hero = document.querySelector(".hero");
-const heroVisual = document.querySelector(".hero-visual");
+// const hero = document.querySelector(".hero");
+// const heroVisual = document.querySelector(".hero-visual");
 
-if (hero && heroVisual) {
-  hero.addEventListener("mousemove", (e) => {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+// if (hero && heroVisual) {
+//   hero.addEventListener("mousemove", (e) => {
+//     const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+//     const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
 
-    heroVisual.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+//     heroVisual.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+//   });
+
+//   hero.addEventListener("mouseleave", () => {
+//     heroVisual.style.transform = "rotateY(0deg) rotateX(0deg)";
+//   });
+// }
+// ============================================
+// Interactive 3D Hero Cube (Drag to Spin, Click to Break)
+// ============================================
+const initHeroCube = () => {
+  const hero = document.querySelector(".hero");
+  const container = document.querySelector(".cube-container");
+
+  if (!hero || !container) return;
+
+  let isDragging = false;
+  let startX, startY;
+  let rotateX = -15; // Initial tilt
+  let rotateY = 30;
+  let isBroken = false;
+
+  // Mouse Down: Start Dragging
+  container.addEventListener("mousedown", (e) => {
+    if (isBroken) return;
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    container.style.cursor = "grabbing";
+    container.style.animation = "none"; // Stop floating so we can control it
+    e.preventDefault(); // Prevent text selection
   });
 
-  hero.addEventListener("mouseleave", () => {
-    heroVisual.style.transform = "rotateY(0deg) rotateX(0deg)";
+  // Mouse Up: Stop Dragging or Trigger Click
+  window.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    container.style.cursor = "grab";
+    container.style.animation = "floatCube 6s ease-in-out infinite"; // Resume floating
+
+    // Calculate if this was a click (moved less than 5px)
+    const dist = Math.hypot(e.clientX - startX, e.clientY - startY);
+    if (dist < 5) {
+      explodeCube();
+    }
   });
+
+  // Mouse Move: Rotate Cube
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging || isBroken) return;
+
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+
+    rotateY += deltaX * 0.5;
+    rotateX -= deltaY * 0.5;
+
+    container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  // Explosion Function
+  function explodeCube() {
+    isBroken = true;
+    container.style.display = "none"; // Hide the big cube
+
+    const heroVisual = document.querySelector(".hero-visual");
+    const miniCubes = [];
+
+    // Create 12 mini cubes
+    for (let i = 0; i < 12; i++) {
+      const miniCube = document.createElement("div");
+      miniCube.classList.add("mini-cube");
+
+      // Build faces
+      ["front", "back", "right", "left", "top", "bottom"].forEach((side) => {
+        const face = document.createElement("div");
+        face.classList.add("face", side);
+        miniCube.appendChild(face);
+      });
+
+      // Start at center
+      miniCube.style.left = "50%";
+      miniCube.style.top = "50%";
+
+      // Random Explosion Path
+      const tx = (Math.random() - 0.5) * 800 + "px";
+      const ty = (Math.random() - 0.5) * 800 + "px";
+      const tz = (Math.random() - 0.5) * 1000 + "px";
+
+      miniCube.style.setProperty("--tx", tx);
+      miniCube.style.setProperty("--ty", ty);
+      miniCube.style.setProperty("--tz", tz);
+
+      // Random Speed
+      const duration = 2 + Math.random() * 2;
+      miniCube.style.animation = `floatParticle ${duration}s forwards ease-out`;
+
+      heroVisual.appendChild(miniCube);
+      miniCubes.push(miniCube);
+    }
+
+    // Reset after 3 seconds
+    setTimeout(() => {
+      miniCubes.forEach((cube) => cube.remove());
+      container.style.display = ""; // Show the big cube again
+      isBroken = false;
+    }, 3000);
+  }
+};
+
+// Initialize
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initHeroCube);
+} else {
+  initHeroCube();
 }
 
 // ============================================

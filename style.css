@@ -444,11 +444,137 @@ body {
 }
 
 .hero-visual {
-  flex: 1;
+  /* flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; */
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 400px; /* Ensure it has space */
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-container {
+  width: 200px;
+  height: 200px;
   position: relative;
+  transform-style: preserve-3d;
+  /* Initial floating animation */
+  animation: floatCube 6s ease-in-out infinite;
+}
+
+/* Base Face Styles */
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(67, 97, 238, 0.5);
+  box-shadow: 0 0 15px rgba(67, 97, 238, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+/* Face Positions */
+.face.front {
+  transform: rotateY(0deg) translateZ(100px);
+}
+.face.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.face.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.face.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.face.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Outer Cube (Wireframe) */
+.cube-outer {
+  animation: rotateOuter 10s linear infinite;
+}
+
+.cube-outer .face {
+  background: rgba(67, 97, 238, 0.05);
+  border: 2px solid var(--primary-blue);
+}
+
+/* Inner Cube (Solid) */
+.cube-inner {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  transform-style: preserve-3d;
+  /* Spin inner cube automatically */
+  animation: rotateInner 10s linear infinite reverse;
+}
+
+.cube-inner .face {
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-primary);
+  border: none;
+  opacity: 0.9;
+  box-shadow: 0 0 30px rgba(114, 9, 183, 0.6);
+}
+
+/* Inner positions adjusted for size */
+.cube-inner .face.front {
+  transform: rotateY(0deg) translateZ(50px);
+}
+.cube-inner .face.back {
+  transform: rotateY(180deg) translateZ(50px);
+}
+.cube-inner .face.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.cube-inner .face.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.cube-inner .face.top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.cube-inner .face.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* Pause animations on hover so user can easily grab/click */
+.cube-container:hover .cube-outer,
+.cube-container:hover .cube-inner {
+  animation-play-state: paused;
+}
+
+/* Animations */
+@keyframes rotateInner {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes floatCube {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-shape {
@@ -496,6 +622,64 @@ body {
   color: var(--text-muted);
   font-size: 0.85rem;
   animation: bounce 2s infinite;
+}
+
+/* ============================================
+   Shattered Cube Particles (Mini Cubes)
+   ============================================ */
+.mini-cube {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform-style: preserve-3d;
+  pointer-events: none; /* Can't click them after breaking */
+}
+
+/* Give the mini cubes the same neon look */
+.mini-cube {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.mini-cube .face {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-yellow);
+  background: rgba(114, 9, 183, 0.4);
+  box-shadow: 0 0 10px rgba(114, 9, 183, 0.8);
+}
+
+.mini-cube .face.front {
+  transform: rotateY(0deg) translateZ(20px);
+}
+.mini-cube .face.back {
+  transform: rotateY(180deg) translateZ(20px);
+}
+.mini-cube .face.right {
+  transform: rotateY(90deg) translateZ(20px);
+}
+.mini-cube .face.left {
+  transform: rotateY(-90deg) translateZ(20px);
+}
+.mini-cube .face.top {
+  transform: rotateX(90deg) translateZ(20px);
+}
+.mini-cube .face.bottom {
+  transform: rotateX(-90deg) translateZ(20px);
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--tx), var(--ty), var(--tz)) rotate(720deg);
+    opacity: 0;
+  }
 }
 
 /* ============================================
