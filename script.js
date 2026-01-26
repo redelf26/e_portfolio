@@ -318,7 +318,7 @@ document
 // ============================================
 // Preloader (Optional)
 // ============================================
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 
   // Trigger initial animations
