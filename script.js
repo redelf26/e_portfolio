@@ -422,3 +422,109 @@ console.log(
   "%c📧 Feel free to reach out if you want to connect!",
   "font-size: 14px; color: #9d4edd;",
 );
+// ============================================
+// Cursor Animation (Magic Dust / Electron Trail)
+// ============================================
+const initCursorEffect = () => {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  document.body.appendChild(canvas);
+
+  // Style the canvas to float on top but let clicks pass through
+  canvas.style.position = "fixed";
+  canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  canvas.style.pointerEvents = "none"; // Allows you to click links behind the dust
+  canvas.style.zIndex = "9999"; // High z-index to be on top
+
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  // Store particles
+  const particles = [];
+
+  // Your Theme Colors (Blue, Lavender, Purple, Yellow)
+  const colors = ["#4361ee", "#7209b7", "#9d4edd", "#ffd166"];
+
+  // Handle Resize
+  window.addEventListener("resize", () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  });
+
+  // Track Mouse
+  const mouse = { x: undefined, y: undefined };
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+
+    // Spawn 2 particles per movement for a "dust" trail
+    for (let i = 0; i < 2; i++) {
+      particles.push(new Particle());
+    }
+  });
+
+  // Particle Class
+  class Particle {
+    constructor() {
+      this.x = mouse.x;
+      this.y = mouse.y;
+      // Random size for "dust" effect
+      this.size = Math.random() * 3 + 1;
+      // Random speed/direction
+      this.speedX = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1;
+      // Random color from your theme
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.life = 1; // Opacity starts at 100%
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      // Shrink and fade out
+      if (this.size > 0.2) this.size -= 0.05;
+      this.life -= 0.02;
+    }
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.life; // Apply fade
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1; // Reset opacity
+    }
+  }
+
+  // Animation Loop
+  const animate = () => {
+    // Clear canvas (uncomment the next line for a clean trail)
+    ctx.clearRect(0, 0, width, height);
+
+    // OPTIONAL: Use this line instead of clearRect for a "tail" effect
+    // ctx.fillStyle = 'rgba(10, 10, 15, 0.1)'; ctx.fillRect(0,0,width,height);
+
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+
+      // Remove dead particles
+      if (particles[i].life <= 0 || particles[i].size <= 0.2) {
+        particles.splice(i, 1);
+        i--;
+      }
+    }
+    requestAnimationFrame(animate);
+  };
+  animate();
+};
+
+// Only run on desktop (performance saver)
+if (window.matchMedia("(min-width: 768px)").matches) {
+  initCursorEffect();
+}
